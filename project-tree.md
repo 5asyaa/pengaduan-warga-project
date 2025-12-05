@@ -23,6 +23,7 @@ pengaduan-warga-project
 │  │  ├─ css
 │  │  │  └─ style.css
 │  │  └─ uploads
+│  │     └─ 1764944013_621.png
 │  ├─ index.php
 │  ├─ logout.php
 │  ├─ register.php

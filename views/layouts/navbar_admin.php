@@ -6,7 +6,7 @@ if (session_status() === PHP_SESSION_NONE) {
 $admin = $_SESSION['user'] ?? null;
 ?>
 <nav style="padding:10px; background:#343a40; color:#fff;">
-    <a href="/public/admin/dashboard.php" style="color:white; margin-right:20px;">
+    <a href="/pengaduan-warga-project/public/admin/dashboard.php" style="color:white; margin-right:20px;">
         Dashboard
     </a>
 
