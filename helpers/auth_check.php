@@ -5,7 +5,8 @@ if (session_status() === PHP_SESSION_NONE) {
 
 // Jika belum login → tendang ke login
 if (!isset($_SESSION['user'])) {
-    header("Location: ../index.php");
+    header("Location: /pengaduan-warga-project/public/index.php");
+    // atau kalau project-mu di root virtual host: header("Location: /public/index.php");
     exit;
 }
 
@@ -24,4 +25,3 @@ function cekRole($allowedRoles = []) {
 if (empty($_SESSION['csrf_token'])) {
     $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
 }
-?>

@@ -1,18 +1,12 @@
 ```
 pengaduan-warga-project
-├─ admin
 ├─ config
 │  └─ database.php
 ├─ controllers
 │  └─ AdminController.php
-├─ includes
+├─ helpers
 │  ├─ alert.php
-│  ├─ auth_check.php
-│  ├─ footer.php
-│  ├─ header.php
-│  ├─ navbar_admin.php
-│  └─ navbar_user.php
-├─ jj.html
+│  └─ auth_check.php
 ├─ models
 │  └─ Pengaduan.php
 ├─ project-tree.md
@@ -36,11 +30,14 @@ pengaduan-warga-project
 │     ├─ dashboard.php
 │     ├─ detail.php
 │     └─ pengaduan_baru.php
-└─ view
+└─ views
    ├─ admin
    │  ├─ dashboard.php
    │  └─ detail.php
    └─ layouts
+      ├─ footer.php
+      ├─ header.php
+      ├─ navbar_admin.php
       └─ navbar_user.php
 
 ```
