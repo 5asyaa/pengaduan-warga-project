@@ -12,7 +12,7 @@ $admin = $_SESSION['user'] ?? null;
 
     <span style="float:right;">
         Admin |
-        <a href="/public/logout.php" style="color:white;">Logout</a>
+        <a href="/pengaduan-warga-project/public/logout.php" style="color:white;">Logout</a>
     </span>
 </nav>
 <br>

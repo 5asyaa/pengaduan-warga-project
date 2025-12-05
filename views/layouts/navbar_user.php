@@ -12,7 +12,7 @@ $user = $_SESSION['user'] ?? null;
 
     <span style="float:right;">
         <?= $user['nama'] ?? '' ?> |
-        <a href="/public/logout.php" style="color:white;">Logout</a>
+        <a href="/pengaduan-warga-project/public/logout.php" style="color:white;">Logout</a>
     </span>
 </nav>
 <br>

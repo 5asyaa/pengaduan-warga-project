@@ -26,7 +26,7 @@ include __DIR__ . "/../layouts/navbar_admin.php";
         <td><?= $p['lokasi']; ?></td>
         <td><?= $p['status']; ?></td>
         <td>
-            <a href="/public/admin/detail.php?id=<?= $p['id']; ?>">Detail</a>
+            <a href="/pengaduan-warga-project/public/admin/detail.php?id=<?= $p['id']; ?>">Detail</a>
         </td>
     </tr>
     <?php endforeach; ?>

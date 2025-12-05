@@ -3,12 +3,14 @@ pengaduan-warga-project
 ├─ config
 │  └─ database.php
 ├─ controllers
-│  └─ AdminController.php
+│  ├─ AdminController.php
+│  ├─ AuthController.php
+│  └─ UserController.php
 ├─ helpers
-│  ├─ alert.php
 │  └─ auth_check.php
 ├─ models
-│  └─ Pengaduan.php
+│  ├─ Pengaduan.php
+│  └─ User.php
 ├─ project-tree.md
 ├─ public
 │  ├─ admin
@@ -21,8 +23,6 @@ pengaduan-warga-project
 │  │  ├─ css
 │  │  │  └─ style.css
 │  │  └─ uploads
-│  │     ├─ 1764775575_545.png
-│  │     └─ 1764775596_524.png
 │  ├─ index.php
 │  ├─ logout.php
 │  ├─ register.php
@@ -34,10 +34,17 @@ pengaduan-warga-project
    ├─ admin
    │  ├─ dashboard.php
    │  └─ detail.php
-   └─ layouts
-      ├─ footer.php
-      ├─ header.php
-      ├─ navbar_admin.php
-      └─ navbar_user.php
+   ├─ auth
+   │  ├─ login.php
+   │  └─ register.php
+   ├─ layouts
+   │  ├─ footer.php
+   │  ├─ header.php
+   │  ├─ navbar_admin.php
+   │  └─ navbar_user.php
+   └─ user
+      ├─ dashboard.php
+      ├─ detail.php
+      └─ pengaduan_baru.php
 
 ```
