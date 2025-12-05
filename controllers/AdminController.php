@@ -2,7 +2,7 @@
 
 require_once __DIR__ . "/../config/database.php";
 require_once __DIR__ . "/../models/Pengaduan.php";
-require_once __DIR__ . "/../includes/auth_check.php";
+require_once __DIR__ . "/../helpers/auth_check.php";
 
 class AdminController
 {
