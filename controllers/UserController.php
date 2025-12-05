@@ -107,4 +107,59 @@ class UserController
         $success = "Pengaduan berhasil dikirim!";
         include __DIR__ . "/../views/user/pengaduan_baru.php";
     }
+
+    // ==========================
+    // HALAMAN KONFIRMASI HAPUS
+    // ==========================
+    public function hapus($id)
+    {
+        $user_id = $_SESSION['user']['id'];
+        $data = $this->model->getByIdForUser($id, $user_id);
+
+        if (!$data) {
+            die("Pengaduan tidak ditemukan atau bukan milik Anda.");
+        }
+
+        // Tidak boleh hapus jika sudah diproses admin
+        if ($data['status'] !== 'menunggu') {
+            die("Pengaduan tidak dapat dihapus karena sudah diproses admin.");
+        }
+
+        include __DIR__ . "/../views/user/hapus.php";
+    }
+
+    // ==========================
+    // EKSEKUSI HAPUS
+    // ==========================
+    public function submitHapus($id)
+    {
+        $user_id = $_SESSION['user']['id'];
+        $data = $this->model->getByIdForUser($id, $user_id);
+
+        if (!$data) {
+            die("Pengaduan tidak ditemukan atau bukan milik Anda.");
+        }
+
+        if ($data['status'] !== 'menunggu') {
+            die("Pengaduan tidak dapat dihapus karena sudah diproses admin.");
+        }
+
+        // Hapus foto bukti awal & penyelesaian (jika ada)
+        $foto_awal = $this->model->getFotoByType($id, 'awal');
+        $foto_selesai = $this->model->getFotoByType($id, 'penyelesaian');
+
+        $path = $_SERVER['DOCUMENT_ROOT'] . "/pengaduan-warga-project/public/assets/uploads/";
+
+        foreach (array_merge($foto_awal, $foto_selesai) as $f) {
+            $file = $path . $f['file_path'];
+            if (file_exists($file)) unlink($file);
+        }
+
+        // Hapus database
+        $this->model->deletePengaduan($id);
+
+        header("Location: dashboard.php");
+        exit;
+    }
+
 }

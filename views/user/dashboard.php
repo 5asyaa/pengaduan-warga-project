@@ -24,7 +24,11 @@ include __DIR__ . "/../layouts/navbar_user.php";
             <td><?= substr($p['deskripsi'], 0, 40) . "..." ?></td>
             <td><?= $p['lokasi']; ?></td>
             <td><?= $p['status']; ?></td>
-            <td><a href="detail.php?id=<?= $p['id']; ?>">Detail</a></td>
+            <td><a href="detail.php?id=<?= $p['id']; ?>">Detail</a>
+                <?php if ($p['status'] === 'menunggu'): ?>
+                    | <a href="hapus.php?id=<?= $p['id']; ?>" style="color:red;">Hapus</a>
+                <?php endif; ?>
+            </td>
         </tr>
     <?php endforeach; ?>
 

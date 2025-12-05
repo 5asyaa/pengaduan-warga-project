@@ -17,13 +17,17 @@ pengaduan-warga-project
 │  │  ├─ dashboard.php
 │  │  ├─ detail.php
 │  │  ├─ proses.php
-│  │  └─ selesai.php
+│  │  ├─ selesai.php
+│  │  ├─ terima.php
+│  │  └─ tolak.php
 │  ├─ assets
 │  │  ├─ .htaccess
 │  │  ├─ css
 │  │  │  └─ style.css
 │  │  └─ uploads
-│  │     └─ 1764944013_621.png
+│  │     ├─ 1764944013_621.png
+│  │     ├─ 1764945841_756.png
+│  │     └─ 1764947843_881.png
 │  ├─ index.php
 │  ├─ logout.php
 │  ├─ register.php
@@ -34,7 +38,10 @@ pengaduan-warga-project
 └─ views
    ├─ admin
    │  ├─ dashboard.php
-   │  └─ detail.php
+   │  ├─ detail.php
+   │  ├─ proses.php
+   │  ├─ selesai.php
+   │  └─ tolak.php
    ├─ auth
    │  ├─ login.php
    │  └─ register.php
