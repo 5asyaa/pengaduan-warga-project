@@ -85,7 +85,7 @@ class Pengaduan
         $stmt = $this->pdo->prepare("
             SELECT * FROM pengaduan
             WHERE user_id = ?
-            ORDER BY created_at DESC
+            ORDER BY created_at ASC
         ");
         $stmt->execute([$user_id]);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);

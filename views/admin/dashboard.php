@@ -119,7 +119,7 @@ include __DIR__ . "/../layouts/header.php";
                             <tbody>
 
                                 <?php if (!empty($pengaduan)) : ?>
-
+                                    <?php $i = 1; ?>
                                     <?php foreach ($pengaduan as $p): ?>
 
                                         <?php
@@ -134,7 +134,7 @@ include __DIR__ . "/../layouts/header.php";
                                         ?>
 
                                         <tr>
-                                            <td><?= $p['id']; ?></td>
+                                            <td><?= $i++; ?></td> 
                                             <td><?= htmlspecialchars($p['nama_user']); ?></td>
                                             <td><?= htmlspecialchars(substr($p['deskripsi'], 0, 40)); ?>...</td>
                                             <td><?= htmlspecialchars($p['lokasi']); ?></td>

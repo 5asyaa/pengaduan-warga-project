@@ -60,7 +60,7 @@ class UserController
         $user_id   = $_SESSION['user']['id'];
         $deskripsi = $_POST['deskripsi'];
         $lokasi    = $_POST['lokasi'];
-        $identitas = $_POST['identitas'];
+        $identitas = $_POST['identitas']?? 'nama';
 
         $pengaduan_id = $this->model->createPengaduan($user_id, $deskripsi, $lokasi, $identitas);
 
