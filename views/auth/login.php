@@ -4,7 +4,6 @@
 
     <div class="auth-container">
 
-        <!-- LEFT: WHITE PANEL (FORM LOGIN) -->
         <div class="auth-white-panel slide-left">
             <h2 class="auth-title">Sign In</h2>
 
@@ -28,7 +27,6 @@
             </form>
         </div>
 
-        <!-- RIGHT: PURPLE PANEL -->
         <div class="auth-purple-panel right">
             <h2>Hello, Friend!</h2>
             <p>Create an account to explore all features.</p>

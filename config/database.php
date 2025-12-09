@@ -1,7 +1,7 @@
 <?php
 $host = "localhost";
 $dbname = "pengaduan_warga";
-$username = "root"; // default XAMPP/Laragon
+$username = "root"; 
 $password = "";
 
 try {
