@@ -1,0 +1,53 @@
+/* ===== NAVBAR ===== */
+
+nav {
+    padding: 12px 20px;
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-user {
+    background: #007bff;
+    color: white;
+}
+
+.nav-admin {
+    background: #343a40;
+    color: white;
+}
+
+nav a {
+    color: white;
+    margin-right: 15px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Admin Navbar (special) */
+
+.admin-navbar {
+    background: #004aad;
+    padding: 12px 20px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.admin-navbar a {
+    color: white;
+    text-decoration: none;
+    margin-right: 15px;
+    font-weight: bold;
+}
+
+.admin-navbar a:hover {
+    text-decoration: underline;
+}
+
+
+

@@ -1,0 +1,564 @@
+/* ===============================
+   DETAIL WRAPPER (CONTAINER)
+   =============================== */
+.detail-wrapper {
+    max-width: 1000px;
+    margin: 40px auto;
+    background: #ffffff;
+    padding: 35px;
+    border-radius: 14px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.06);
+}
+
+/* ===============================
+   TITLE
+   =============================== */
+.detail-title {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 700;
+    margin-top: 5px;
+    color: #1e2d73;
+}
+
+.detail-subtitle {
+    text-align: center;
+    color: #777;
+    margin-bottom: 30px;
+}
+
+/* ===============================
+   BUTTON BACK (LEFT SIDE)
+   =============================== */
+.btn-back {
+    background: #2f4fa8;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 7px;
+    text-decoration: none;
+    font-weight: 600;
+}
+.btn-back:hover {
+    background: #1f3d87;
+}
+
+/* ===============================
+   GRID BOX DETAIL
+   =============================== */
+.detail-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.detail-box {
+    background: #f4f6ff;
+    padding: 18px 20px;
+    border-radius: 12px;
+    border-left: 4px solid #2f4fa8;
+}
+
+.detail-box.full {
+    grid-column: 1 / span 2;
+}
+
+.detail-box-title {
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: #1b2a60;
+}
+
+.detail-box-value {
+    font-size: 15px;
+}
+
+/* ===============================
+   STATUS BADGES
+   =============================== */
+.badge-menunggu {
+    background: #ffed95;
+    padding: 6px 14px;
+    border-radius: 40px;
+}
+.badge-proses {
+    background: #cfe3ff;
+    padding: 6px 14px;
+    border-radius: 40px;
+}
+.badge-selesai {
+    background: #c8f7d2;
+    padding: 6px 14px;
+    border-radius: 40px;
+}
+.badge-ditolak {
+    background: #ffcdcd;
+    padding: 6px 14px;
+    border-radius: 40px;
+}
+
+/* ===============================
+   FOTO
+   =============================== */
+.foto-section {
+    margin-top: 30px;
+}
+
+.foto-section-title {
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.foto-wrapper {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.foto-item {
+    width: 180px;
+    height: 150px;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 2px solid #ddd;
+}
+
+.foto-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ===============================
+   BUTTON BAR (LEFT–RIGHT)
+   =============================== */
+.detail-actions-wrapper {
+    margin-top: 35px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 14px;
+}
+
+.btn-action {
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    color: white;
+}
+
+.btn-proses {
+    background: #1a63a8;
+}
+.btn-proses:hover {
+    background: #154f85;
+}
+
+.btn-tolak {
+    background: #b13434;
+}
+.btn-tolak:hover {
+    background: #8f2a2a;
+}
+
+.btn-selesai {
+    background: #2d7a39;
+}
+.btn-selesai:hover {
+    background: #23632e;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .detail-grid {
+        grid-template-columns: 1fr;
+    }
+    .detail-actions-wrapper {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+}
+
+.content-wrapper {
+    margin-left: 250px;
+    padding: 40px;
+    background: #f5f6fa;
+    min-height: 100vh;
+}
+
+.detail-container {
+    background: #fff;
+    padding: 40px;
+    border-radius: 14px;
+    width: 85%;
+    margin: auto;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.back-btn-wrapper {
+    margin-bottom: 10px;
+}
+
+.btn-back {
+    background: #3056d3;
+    padding: 8px 18px;
+    border-radius: 8px;
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.detail-title {
+    text-align: center;
+    font-size: 26px;
+    margin-bottom: 4px;
+    font-weight: 700;
+}
+
+.detail-subtitle {
+    text-align: center;
+    color: #555;
+    margin-bottom: 25px;
+}
+
+.form-card {
+    background: #f8f9fc;
+    padding: 25px;
+    border-radius: 12px;
+}
+
+.form-label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 6px;
+}
+
+.form-input {
+    width: 100%;
+    height: 150px;
+    padding: 12px;
+    border: 1px solid #ccd1e4;
+    border-radius: 10px;
+    font-size: 15px;
+}
+
+.btn-row {
+    margin-top: 18px;
+    display: flex;
+    gap: 15px;
+}
+
+.btn-submit {
+    background: #e63946;
+    padding: 10px 20px;
+    border-radius: 8px;
+    color: white;
+    font-weight: 600;
+    border: none;
+}
+
+.btn-cancel {
+    background: #3056d3;
+    padding: 10px 20px;
+    border-radius: 8px;
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* Card wrapper */
+.form-card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+    width: 70%;
+    margin: 40px auto;
+}
+
+/* Title styling */
+.form-title {
+    text-align: center;
+    font-size: 26px;
+    font-weight: 700;
+    color: #1B2A59;
+    margin-bottom: 5px;
+}
+
+.form-sub {
+    text-align: center;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+/* Textarea */
+textarea {
+    width: 100%;
+    min-height: 150px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 12px;
+    outline: none;
+    resize: vertical;
+}
+
+textarea:focus {
+    border-color: #1B2A59;
+}
+
+/* Buttons row */
+.btn-row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+/* Blue Button */
+.btn-blue {
+    background: #1B4DFF;
+    color: white;
+    padding: 10px 22px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.btn-blue:hover {
+    background: #0039d4;
+}
+
+/* Back Button */
+.btn-back {
+    background: #E4EBFF;
+    color: #1B2A59;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+.btn-back:hover {
+    background: #d0dbff;
+}
+
+.detail-container {
+    background: #ffffff;
+    padding: 35px;
+    border-radius: 14px;
+    max-width: 900px;
+    margin: 0 auto;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+}
+
+.detail-box {
+    background: #f7f9ff;
+    padding: 18px;
+    border-radius: 10px;
+    margin-bottom: 22px;
+    border-left: 4px solid #1f3c88;
+}
+
+.detail-box.full {
+    width: 100%;
+}
+
+.input-file {
+    margin-top: 10px;
+    padding: 8px;
+    border: 1px solid #cdd3ea;
+    border-radius: 6px;
+    background: white;
+}
+
+.input-area {
+    width: 100%;
+    height: 150px;
+    margin-top: 10px;
+    padding: 14px;
+    resize: vertical;
+    border: 1px solid #cdd3ea;
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+.btn-row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+}
+
+.btn-blue {
+    background: #1f3c88;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-blue:hover {
+    background: #162c66;
+}
+
+.detail-box.full {
+    width: 100%;
+}
+
+.input-area {
+    width: 100%;
+    height: 150px;
+    margin-top: 10px;
+    padding: 14px;
+    border-radius: 10px;
+    border: 1px solid #cdd3ea;
+    resize: vertical;
+    background: #fff;
+}
+
+.btn-large {
+    padding: 16px 20px !important;
+    font-size: 18px !important;
+    font-weight: 600 !important;
+    border-radius: 10px !important;
+}
+
+/* ================================
+   FORM CONTAINER
+   ================================ */
+.form-container {
+    background: #ffffff;
+    padding: 30px 40px;
+    width: 80%;
+    max-width: 850px;
+    margin: 0 auto;
+    border-radius: 15px;
+    box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+/* Title di tengah */
+.form-container h2 {
+    font-size: 22px;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.form-container .subtitle {
+    margin-bottom: 25px;
+    text-align: center;
+    color: #666;
+    font-size: 14px;
+}
+
+/* ================================
+   FORM ELEMENT GLOBAL
+   ================================ */
+.form-container form label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+.form-container form textarea,
+.form-container form input[type="text"],
+.form-container form select,
+.form-container form input[type="file"] {
+    width: 100%;
+    padding: 12px;
+    font-size: 15px;
+    border: 1.5px solid #d9d9d9;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    background: white;
+    box-sizing: border-box;
+}
+
+/* Textarea */
+.form-container form textarea {
+    height: 150px;
+    resize: none;
+}
+
+/* Hover */
+.form-container form textarea:hover,
+.form-container form input[type="text"]:hover,
+.form-container form select:hover {
+    border-color: #1e56c3;
+}
+
+/* Focus */
+.form-container form textarea:focus,
+.form-container form input[type="text"]:focus,
+.form-container form select:focus {
+    border-color: #1e56c3;
+    outline: none;
+    box-shadow: 0px 0px 6px rgba(30, 86, 195, 0.3);
+}
+
+/* ================================
+   BUTTON KIRIM
+   ================================ */
+.btn-kirim {
+    width: 100%;
+    background: #1e56c3;
+    color: white;
+    font-size: 17px;
+    padding: 14px 0;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.btn-kirim:hover {
+    background: #17479e;
+}
+
+/* ================================
+   RESPONSIVE
+   ================================ */
+@media (max-width: 768px) {
+    .form-container {
+        width: 95%;
+        padding: 25px;
+    }
+}
+
+/* Agar gambar tidak keluar dari card */
+.foto-wrapper img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    display: block;
+}
+
+/* Bungkus foto agar ukurannya rapi */
+.foto-item {
+    width: 100%;
+    max-width: 260px;
+    margin-bottom: 15px;
+}
+
+/* Grid responsif agar box tidak overflow */
+.detail-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+/* Box yang harus full-width (deskripsi, lokasi) */
+.detail-box.full {
+    grid-column: 1 / -1;
+}
+
+/* Mencegah teks panjang keluar area */
+.detail-box-value {
+    word-break: break-word;
+    overflow-wrap: break-word;
+}

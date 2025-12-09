@@ -1,18 +1,58 @@
-<?php
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
-}
+<div class="admin-layout">
 
-$admin = $_SESSION['user'] ?? null;
-?>
-<nav style="padding:10px; background:#343a40; color:#fff;">
-    <a href="/pengaduan-warga-project/public/admin/dashboard.php" style="color:white; margin-right:20px;">
-        Dashboard
-    </a>
+    <!-- SIDEBAR -->
+    <aside class="admin-sidebar">
+        <div class="admin-brand">
+            <span class="brand-title">Pengaduan Warga</span>
+        </div>
 
-    <span style="float:right;">
-        Admin |
-        <a href="/pengaduan-warga-project/public/logout.php" style="color:white;">Logout</a>
-    </span>
-</nav>
-<br>
+        <nav class="admin-menu">
+            <div class="admin-menu-item active">
+                <span class="menu-icon"></span>
+                Dashboard
+            </div>
+
+            <div class="admin-menu-item">
+                <span class="menu-icon"></span>
+                Data Pengaduan Warga
+            </div>
+        </nav>
+    </aside>
+
+    <!-- MAIN AREA -->
+    <div class="admin-main">
+
+        <!-- NAVBAR -->
+        <header class="admin-header">
+            <div class="admin-header-left">
+                <h1>Dashboard Admin</h1>
+                <p class="subtitle">Ringkasan aktivitas & data pengaduan warga</p>
+            </div>
+
+            <div class="admin-header-right">
+                <span class="admin-role"><?= $_SESSION["role"] ?? "Admin" ?></span>
+                <a href="/pengaduan-warga-project/public/logout.php" class="admin-logout-btn">Logout</a>
+            </div>
+        </header>
+<!-- SIDEBAR BARU (CLEAN & FIXED) -->
+<aside class="admin-sidebar">
+
+    <div class="admin-brand">
+        <span class="brand-title">Pengaduan Warga</span>
+    </div>
+
+    <nav class="admin-menu">
+        <div class="menu-section">
+            <a class="admin-menu-item active" href="#">
+                <span class="menu-icon"></span>
+                Dashboard
+            </a>
+
+            <a class="admin-menu-item" href="#">
+                <span class="menu-icon"></span>
+                Data Pengaduan Warga
+            </a>
+        </div>
+    </nav>
+
+</aside>

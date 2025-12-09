@@ -1,27 +1,42 @@
-<?php
-// $error dan $success diset dari AuthController
-include __DIR__ . "/../layouts/header.php";
-?>
+<?php include __DIR__ . "/../layouts/header.php"; ?>
 
-<h2>Login Pengaduan Warga</h2>
+<div class="auth-wrapper login">
 
-<?php if (!empty($error)) : ?>
-    <div style="color:red;"><?php echo $error; ?></div>
-<?php endif; ?>
+    <div class="auth-container">
 
-<form method="POST" action="index.php">
-    <label>Email:</label><br>
-    <input type="email" name="email" required><br><br>
+        <!-- LEFT: WHITE PANEL (FORM LOGIN) -->
+        <div class="auth-white-panel slide-left">
+            <h2 class="auth-title">Sign In</h2>
 
-    <label>Password:</label><br>
-    <input type="password" name="password" required><br><br>
+            <?php if (!empty($error)) : ?>
+                <div class="auth-error"><?php echo $error; ?></div>
+            <?php endif; ?>
 
-    <button type="submit" name="login">Login</button>
-</form>
+            <form method="POST" action="index.php" class="auth-form">
 
-<br>
-<a href="register.php">Belum punya akun? Daftar</a>
+                <div class="input-group">
+                    <label>Email</label>
+                    <input type="email" name="email" required>
+                </div>
 
-<?php
-include __DIR__ . "/../layouts/footer.php";
-?>
+                <div class="input-group">
+                    <label>Password</label>
+                    <input type="password" name="password" required>
+                </div>
+
+                <button type="submit" name="login" class="btn-primary">Sign In</button>
+            </form>
+        </div>
+
+        <!-- RIGHT: PURPLE PANEL -->
+        <div class="auth-purple-panel right">
+            <h2>Hello, Friend!</h2>
+            <p>Create an account to explore all features.</p>
+            <a href="register.php" class="btn-outline">Sign Up</a>
+        </div>
+
+    </div>
+
+</div>
+
+<?php include __DIR__ . "/../layouts/footer.php"; ?>

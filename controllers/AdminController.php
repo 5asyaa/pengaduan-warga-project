@@ -22,17 +22,29 @@ class AdminController
     }
 
     /* ========== DETAIL ========== */
-    public function detail($id)
-    {
-        $data = $this->model->findById($id);
-        if (!$data) {
-            die("Pengaduan tidak ditemukan.");
-        }
+    public function detail() {
+        require_once __DIR__ . '/../models/Pengaduan.php';
+        global $pdo;
 
-        $foto_awal    = $this->model->getFotoByType($id, 'awal');
-        $foto_selesai = $this->model->getFotoByType($id, 'penyelesaian');
+        $id = $_GET["id"];
 
-        include __DIR__ . "/../views/admin/detail.php";
+        // Buat model
+        $model = new Pengaduan($pdo);
+
+        // Ambil data pengaduan
+        $pengaduan = $model->findById($id);
+
+        // ⬇ TAMBAHKAN 2 BARIS INI AGAR FOTO MUNCUL ⬇
+        $foto_awal = $model->getFotoByType($id, 'awal');
+        $foto_selesai = $model->getFotoByType($id, 'penyelesaian');
+        // ⬆ TAMBAHKAN 2 BARIS INI ⬆
+
+        // Kirim semua data ke view
+        $data["pengaduan"] = $pengaduan;
+        $data["foto_awal"] = $foto_awal;
+        $data["foto_selesai"] = $foto_selesai;
+
+        include __DIR__ . '/../views/admin/admin-detail.php';
     }
 
     /* ========== PROSES ========== */
@@ -124,6 +136,9 @@ class AdminController
             include __DIR__ . "/../views/admin/selesai.php";
             return;
         }
+        if (!empty($_POST['catatan_admin'])) {
+            $this->model->saveCatatanAdmin($id, $_POST['catatan_admin']);
+        }
 
         // kalau semua aman → ubah status jadi 'selesai'
         $this->model->updateStatus($id, 'selesai');
@@ -163,7 +178,4 @@ class AdminController
         header("Location: detail.php?id=" . $id);
         exit;
     }
-
-
-
 }

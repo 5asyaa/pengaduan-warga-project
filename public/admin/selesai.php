@@ -1,14 +1,13 @@
 <?php
+require_once "../../config/database.php";
 require_once "../../controllers/AdminController.php";
-
-if (!isset($_GET['id'])) {
-    die("ID pengaduan tidak ditemukan.");
-}
 
 $controller = new AdminController($pdo);
 
+// Jika tombol submit ditekan → proses selesai
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $controller->submitSelesai((int) $_GET['id']);
-} else {
-    $controller->selesai((int) $_GET['id']);
+    $controller->submitSelesai($_GET['id']);
+    exit;
 }
+
+$controller->selesai($_GET['id']);

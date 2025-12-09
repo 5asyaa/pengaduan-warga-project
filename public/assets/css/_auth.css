@@ -1,0 +1,306 @@
+/* =============================================
+   AUTH — FINAL VERSION (LIKE INSTAGRAM VIDEO)
+   ============================================= */
+
+.auth-wrapper {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: radial-gradient(circle at top, #dfe4f7 0%, #c0c8e8 45%, #aab4d5 100%);
+    padding: 20px;
+
+    animation: fadeWrapper 0.8s ease;
+}
+
+@keyframes fadeWrapper {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* MAIN AUTH CARD */
+.auth-container {
+    width: 950px;
+    height: 520px;
+    background: #ffffff;
+    border-radius: 35px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    box-shadow: 0 30px 70px rgba(0,0,0,0.25);
+
+    animation: cardFadeUp 0.7s ease-out;
+}
+
+@keyframes cardFadeUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* =============================================
+   WHITE FORM PANEL
+   ============================================= */
+
+.auth-white-panel {
+    width: 60%;
+    padding: 60px 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.auth-title {
+    font-size: 36px;
+    font-weight: 800;
+    margin-bottom: 35px;
+    color: #1c1c1c;
+}
+
+.input-group {
+    margin-bottom: 18px;
+}
+
+.input-group label {
+    font-size: 14px;
+    margin-bottom: 6px;
+    display: block;
+    color: #333;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid #d2d7e6;
+    background: #f4f6ff;
+    font-size: 14px;
+    transition: .25s;
+}
+
+.input-group input:focus {
+    border-color: #784bff;
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(120, 75, 255, 0.2);
+}
+
+/* FORM ERROR BOX (tanpa animasi refresh) */
+.auth-error {
+    background: #ffdede;
+    padding: 12px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    color: #b60000;
+    font-size: 14px;
+}
+
+/* SUBMIT BUTTON */
+.btn-primary {
+    margin-top: 20px;
+    padding: 12px 35px;
+    background: #6a4eff;
+    color: #ffffff;
+    border: none;
+    border-radius: 25px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.btn-primary:hover {
+    background: #5334e8;
+    transform: translateY(-2px);
+}
+
+/* =============================================
+   PURPLE PANEL (THE SLIDING PANEL)
+   ============================================= */
+
+.auth-purple-panel {
+    width: 40%;
+    padding: 40px;
+    color: white;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: linear-gradient(135deg, #7b3dff, #5520d4);
+    overflow: hidden;
+}
+
+/* =============================================
+   PURPLE PANEL — LOGIN PAGE (RIGHT SIDE)
+   ============================================= */
+
+.auth-wrapper.login .auth-purple-panel {
+    border-radius: 0 35px 35px 0;
+    animation: slideInRight 0.9s ease-out;
+}
+
+/* curve shape */
+.auth-wrapper.login .auth-purple-panel::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: inherit;
+    clip-path: ellipse(130% 120% at -30% 50%);  /* curve di kiri */
+}
+
+/* animation */
+@keyframes slideInRight {
+    from { transform: translateX(120px); opacity: 0; }
+    to   { transform: translateX(0); opacity: 1; }
+}
+
+/* =============================================
+   PURPLE PANEL — REGISTER PAGE (LEFT SIDE)
+   ============================================= */
+
+.auth-wrapper.register .auth-purple-panel {
+    border-radius: 35px 0 0 35px;
+    animation: slideInLeft 0.9s ease-out;
+}
+
+.auth-wrapper.register .auth-purple-panel::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: inherit;
+    clip-path: ellipse(130% 120% at 130% 50%); /* curve di kanan */
+}
+
+@keyframes slideInLeft {
+    from { transform: translateX(-120px); opacity: 0; }
+    to   { transform: translateX(0); opacity: 1; }
+}
+
+/* =============================================
+   CONTENT INSIDE THE PURPLE PANEL
+   ============================================= */
+
+.auth-purple-panel h2 {
+    font-size: 30px;
+    font-weight: 800;
+    margin-bottom: 12px;
+    position: relative;
+    z-index: 2;
+}
+
+.auth-purple-panel p {
+    font-size: 14px;
+    margin-bottom: 25px;
+    opacity: 0.9;
+    position: relative;
+    z-index: 2;
+}
+
+/* WHITE OUTLINE BUTTON */
+.btn-outline {
+    display: inline-block;
+    padding: 10px 34px;
+    border-radius: 25px;
+    border: 2px solid #ffffff;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    transition: .22s;
+    position: relative;
+    z-index: 3;
+}
+
+.btn-outline:hover {
+    background: #ffffff;
+    color: #5520d4;
+}
+
+/* =============================================
+   PURPLE PANEL – LIKE THE VIDEO (BIG CURVE)
+   ============================================= */
+
+.auth-purple-panel {
+    width: 40%;
+    position: relative;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 60px 50px;
+
+    background: linear-gradient(135deg, #7b3dff, #5520d4);
+    overflow: hidden;
+
+    border-radius: 0 35px 35px 0;
+}
+
+/* LOGIN — curve menghadap kiri */
+.auth-wrapper.login .auth-purple-panel::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: inherit;
+
+    /* curve besar seperti video */
+    clip-path: ellipse(80% 90% at -10% 50%);
+}
+
+/* REGISTER — curve menghadap kanan */
+.auth-wrapper.register .auth-purple-panel {
+    border-radius: 35px 0 0 35px;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.auth-wrapper.register .auth-purple-panel::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: inherit;
+
+    clip-path: ellipse(80% 90% at 110% 50%);
+}
+
+/* TEXT INSIDE PURPLE PANEL */
+.auth-purple-panel h2 {
+    position: relative;
+    z-index: 2;
+    font-size: 34px;
+    font-weight: 800;
+    margin-bottom: 6px;
+}
+
+.auth-purple-panel p {
+    position: relative;
+    z-index: 2;
+    width: 65%;
+    line-height: 1.4;
+    font-size: 15px;
+    margin-bottom: 28px;
+}
+
+/* OUTLINE BUTTON (CENTER) */
+.btn-outline {
+    display: inline-block;
+    padding: 12px 36px;
+    border-radius: 30px;
+    border: 2px solid white;
+    color: white;
+    font-weight: 600;
+    font-size: 15px;
+    text-decoration: none;
+    transition: 0.25s;
+
+    position: relative;
+    z-index: 2;
+
+    align-self: center; /* supaya tidak mepet kanan */
+}
+
+.btn-outline:hover {
+    background: #ffffff;
+    color: #5520d4;
+}

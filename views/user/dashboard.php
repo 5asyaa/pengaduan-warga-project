@@ -1,37 +1,106 @@
 <?php
 include __DIR__ . "/../layouts/header.php";
-include __DIR__ . "/../layouts/navbar_user.php";
 ?>
 
-<h2>Dashboard User</h2>
-<p>Hai, <b><?= $_SESSION['user']['nama']; ?></b></p>
+        <!-- CONTENT -->
+        <div class="admin-content">
+            <div class="admin-content-inner">
 
-<a href="pengaduan_baru.php" class="btn">+ Buat Pengaduan</a>
-<br><br>
+                <!-- CARD UTAMA -->
+                <section class="admin-card">
+                    <h2>Pengaduan Anda</h2>
+                    <p class="subtitle">Daftar pengaduan yang pernah Anda kirimkan</p>
 
-<table border="1" cellpadding="8">
-    <tr>
-        <th>ID</th>
-        <th>Deskripsi</th>
-        <th>Lokasi</th>
-        <th>Status</th>
-        <th>Aksi</th>
-    </tr>
+                    <a href="pengaduan_baru.php" class="btn-small primary">+ Buat Pengaduan</a>
+                </section>
 
-    <?php foreach ($pengaduan as $p) : ?>
-        <tr>
-            <td><?= $p['id']; ?></td>
-            <td><?= substr($p['deskripsi'], 0, 40) . "..." ?></td>
-            <td><?= $p['lokasi']; ?></td>
-            <td><?= $p['status']; ?></td>
-            <td><a href="detail.php?id=<?= $p['id']; ?>">Detail</a>
-                <?php if ($p['status'] === 'menunggu'): ?>
-                    | <a href="hapus.php?id=<?= $p['id']; ?>" style="color:red;">Hapus</a>
-                <?php endif; ?>
-            </td>
-        </tr>
-    <?php endforeach; ?>
+                <!-- TABEL RIWAYAT -->
+                <section class="admin-card">
 
-</table>
+                    <h2>Riwayat Pengaduan</h2>
+                    <p class="subtitle">
+                        Catatan: <b><span style="color:#d19d00;">Hanya pengaduan dengan status "menunggu"</span></b> yang dapat dihapus.
+                    </p>
+
+                    <div class="admin-table-wrapper">
+                        <table class="admin-table">
+
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Deskripsi</th>
+                                    <th>Lokasi</th>
+                                    <th>Status</th>
+                                    <th>Aksi</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+
+                                <?php if (!empty($pengaduan)) : ?>
+                                    <?php $no = 1; // ID urut user ?>
+
+                                    <?php foreach ($pengaduan as $p): ?>
+
+                                        <?php 
+                                            $status = strtolower($p['status']);
+                                            $badgeClass = match ($status) {
+                                                "menunggu" => "badge-pending",
+                                                "proses" => "badge-proses",
+                                                "selesai" => "badge-selesai",
+                                                "ditolak" => "badge-ditolak",
+                                                default => "badge-default"
+                                            };
+                                        ?>
+
+                                        <tr>
+                                            <!-- ID URUT USER -->
+                                            <td><?= $no; ?></td>
+
+                                            <td><?= htmlspecialchars(substr($p['deskripsi'], 0, 40)); ?>...</td>
+                                            <td><?= htmlspecialchars($p['lokasi']); ?></td>
+
+                                            <td>
+                                                <span class="status-badge <?= $badgeClass ?>">
+                                                    <?= ucfirst($status) ?>
+                                                </span>
+                                            </td>
+
+                                            <td style="display:flex; gap:10px;">
+                                                <a href="detail.php?id=<?= $p['id']; ?>&no=<?= $no; ?>" 
+                                                    class="btn-small primary">Detail</a>
+
+                                                <?php if ($status === "menunggu"): ?>
+                                                    <a href="hapus.php?id=<?= $p['id']; ?>&no=<?= $no; ?>" 
+                                                       class="btn-small danger">Hapus</a>
+                                                <?php endif; ?>
+                                            </td>
+                                        </tr>
+
+                                        <?php $no++; ?>
+                                    <?php endforeach; ?>
+
+                                <?php else: ?>
+
+                                    <tr>
+                                        <td colspan="5" style="text-align:center; padding:20px;">
+                                            Tidak ada data.
+                                        </td>
+                                    </tr>
+
+                                <?php endif; ?>
+
+                            </tbody>
+
+                        </table>
+                    </div>
+
+                </section>
+
+            </div>
+        </div>
+
+    </div>
+</div>
 
 <?php include __DIR__ . "/../layouts/footer.php"; ?>

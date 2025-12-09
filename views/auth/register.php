@@ -1,34 +1,52 @@
-<?php
-// $error dan $success diset dari AuthController
-include __DIR__ . "/../layouts/header.php";
-?>
+<?php include __DIR__ . "/../layouts/header.php"; ?>
 
-<h2>Registrasi</h2>
+<div class="auth-wrapper register">
 
-<?php if (!empty($error)) : ?>
-    <p style="color:red;"><?php echo $error; ?></p>
-<?php endif; ?>
+    <div class="auth-container">
 
-<?php if (!empty($success)) : ?>
-    <p style="color:green;"><?php echo $success; ?></p>
-<?php endif; ?>
+        <!-- LEFT: PURPLE PANEL -->
+        <div class="auth-purple-panel left">
+            <h2>Welcome Back!</h2>
+            <p>Already have an account? Login here.</p>
+            <a href="index.php" class="btn-outline">Sign In</a>
+        </div>
 
-<form method="POST" action="register.php">
-    <label>Nama:</label><br>
-    <input type="text" name="nama" required><br><br>
+        <!-- RIGHT: WHITE PANEL (FORM REGISTER) -->
+        <div class="auth-white-panel slide-right">
 
-    <label>Email:</label><br>
-    <input type="email" name="email" required><br><br>
+            <h2 class="auth-title">Sign Up</h2>
 
-    <label>Password:</label><br>
-    <input type="password" name="password" required><br><br>
+            <?php if (!empty($error)) : ?>
+                <div class="auth-error"><?php echo $error; ?></div>
+            <?php endif; ?>
 
-    <button type="submit" name="register">Daftar</button>
-</form>
+            <?php if (!empty($success)) : ?>
+                <div class="auth-success"><?php echo $success; ?></div>
+            <?php endif; ?>
 
-<br>
-<a href="index.php">Sudah punya akun? Login</a>
+            <form method="POST" action="register.php" class="auth-form">
 
-<?php
-include __DIR__ . "/../layouts/footer.php";
-?>
+                <div class="input-group">
+                    <label>Nama</label>
+                    <input type="text" name="nama" required>
+                </div>
+
+                <div class="input-group">
+                    <label>Email</label>
+                    <input type="email" name="email" required>
+                </div>
+
+                <div class="input-group">
+                    <label>Password</label>
+                    <input type="password" name="password" required>
+                </div>
+
+                <button type="submit" name="register" class="btn-primary">Sign Up</button>
+            </form>
+        </div>
+
+    </div>
+
+</div>
+
+<?php include __DIR__ . "/../layouts/footer.php"; ?>

@@ -37,7 +37,7 @@ class UserController
         $foto_awal = $this->model->getFotoByType($id, 'awal');
         $foto_selesai = $this->model->getFotoByType($id, 'penyelesaian');
 
-        include __DIR__ . "/../views/user/detail.php";
+        include __DIR__ . "/../views/user/user-detail.php";
     }
 
     // ==========================
@@ -124,7 +124,8 @@ class UserController
         if ($data['status'] !== 'menunggu') {
             die("Pengaduan tidak dapat dihapus karena sudah diproses admin.");
         }
-
+        $foto_awal = $this->model->getFotoByType($id, 'awal');
+        $foto_selesai = $this->model->getFotoByType($id, 'penyelesaian');
         include __DIR__ . "/../views/user/hapus.php";
     }
 
