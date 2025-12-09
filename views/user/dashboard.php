@@ -1,5 +1,6 @@
 <?php
 include __DIR__ . "/../layouts/header.php";
+include __DIR__ . "/../layouts/navbar_user.php";
 ?>
 
         <!-- CONTENT -->
