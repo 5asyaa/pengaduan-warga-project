@@ -95,8 +95,7 @@ include __DIR__ . "/../layouts/navbar_admin.php";
                                 type="submit"
                                 class="btn-small primary"
                                 style="padding:12px 28px; font-size:15px; border-radius:8px; font-weight:600;"
-                            >
-                                Selesaikan Pengaduan
+                            > Selesaikan Pengaduan
                             </button>
                         </div>
 
